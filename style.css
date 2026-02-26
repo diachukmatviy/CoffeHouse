@@ -1,0 +1,536 @@
+html{
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+section, .about, #menu, #gallery, #contacts {
+    scroll-margin-top: 350px; 
+}
+header {
+    position: relative;
+    height: 700px;
+    text-align: center;
+    color: #000;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+}
+.blr{
+  background-color: rgba(255, 255, 255, 1);
+  position :absolute;
+  top: 1050px;
+  left: -10px;
+  filter: blur(10px);
+  width: 200px;
+  height: 400px;
+  z-index: 2;
+}
+.blr2{
+ background-color: rgba(255, 255, 255, 1);
+  position :absolute;
+  top: 1050px;
+  right: -10px;
+  filter: blur(10px);
+  width: 200px;
+  height: 400px;
+  z-index: 2;
+}
+.slider {
+  overflow: hidden;
+  width: 100%;
+  height: 400px;
+  position: relative;
+  top: 30px;
+}
+
+.slide-track {
+  display: flex;
+  gap: 55px;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.card {
+  margin-top: 20px;
+  width: 200px;          
+  height: 300px;  
+  overflow: hidden;       
+  border-radius: 10px;
+  background-color: #ffffff; 
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, filter 0.3s;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 70%;         
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #ccc;
+}
+
+.card-text {
+  width: 100px;
+  padding: 10px;
+  margin-top: 23px;
+  margin-left : 40px;
+  font-family: sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.card:hover {
+  transform: scale(1.05);  
+}
+
+.card.blur {
+  filter: blur(2px);       
+}
+
+
+.card:hover {
+  transform: scale(1.05);
+  background: #c59d5f;
+  color: rgb(255, 255, 255);
+}
+.slide-track:hover .card {
+  filter: blur(3px);
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.slide-track .card:hover {
+  filter: blur(0);
+  opacity: 1;
+  transform: scale(1.12);
+}
+.slider:hover .slide-track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.header-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: url("images/nafinia-putra-Kwdp-0pok-I-unsplash.jpg") no-repeat center center;
+  background-size: cover;
+  filter: blur(4px) brightness(0.6);
+  z-index: -1;
+}
+
+.navbar {
+     background-color: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(5px); 
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 70px;
+}
+
+.navbar h1 {
+  position: relative;
+  right: 25%;
+  top: -5px;
+  color: white;
+}
+
+nav a {
+  color: #000;
+  position: relative;
+  top: -55px;
+  left: 10%;
+  padding: 20px;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+
+section {
+    padding: 30px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    background: #eee;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+.form-message {
+    margin-top: 10px;
+    color: green;
+    font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav a {
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #c59d5f;
+}
+
+.hero {
+  height: 100px;
+  align-items: center;
+
+  color: white;
+}
+
+.hero-content {
+    position:relative;
+    left: -500px;
+    top: -90%;
+      max-width: 600px;
+  align-items: center;
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero h1 {
+  font-size: 56px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  text-align: left;
+  opacity: 0.9;
+}
+
+.hero-buttons{
+    display: flex;
+    margin-left: 50px;
+    gap: 20px;
+}
+
+.btn-primary {
+  background: #c59d5f;
+  padding: 14px 30px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.btn-secondary {
+  border: 2px solid white;
+  padding: 14px 30px;
+  border-radius: 30px;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: black;
+}
+
+
+
+
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+footer {
+  background: #111;
+  color: white;
+  padding: 40px 80px;
+  text-align: center;
+}
+
+
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 15px 30px;
+  }
+
+  .hero {
+    padding: 0 30px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+ 
+}
+.about{
+  position: relative;
+  top:20px;
+  left: 41%;
+  width: 400px;
+  height: 200px;
+  font-size: 22px;
+  
+}
+.about p{
+  position: relative;
+  left: -150px;
+}
+.lgo{
+  filter: brightness(0) invert(1);
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 335px;
+  top: 13px; 
+}
+
+.ab1{
+  position: relative;
+  width: 200px;
+  left: 47%;
+}
+.mn1{
+  position: relative;
+  width: 200px;
+  left: 48%;
+  margin-bottom: 0;
+}
+.abph{
+  position: absolute;
+  left: 300px;
+  top : -50px;
+  width: 400px;
+  border-radius: 30px;
+  
+}
+
+#contacts {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+#contacts h2 {
+    color: #4b2c20;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#contacts p {
+    color: #6d4c41;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+
+#contactForm input, 
+#contactForm textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #d7ccc8;
+    border-radius: 8px;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+
+#contactForm input:focus, 
+#contactForm textarea:focus {
+    outline: none;
+    border-color: #795548;
+    box-shadow: 0 0 8px rgba(121, 85, 72, 0.2);
+}
+
+#contactForm textarea {
+    height: 120px;
+    resize: none;
+}
+
+
+#contactForm button {
+    width: 100%;
+    padding: 15px;
+    background-color: #6f4e37;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#contactForm button:hover {
+    background-color: #4b2c20;
+    transform: translateY(-2px);
+}
+
+#contactForm button:active {
+    transform: translateY(0);
+}
+
+
+.form-message {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.btn-reserve {
+    padding: 15px 30px;
+    background-color: #6f4e37;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 82%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+
+.modal.show {
+    opacity: 1;
+    pointer-events: auto ;
+}
+
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    height: 300px;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+  
+
+.close-button {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #aaa;
+}
+.modal-content h2{
+    color: black;
+
+}
+
+.close-button:hover { color: #000; }
+
+
+#bookingForm input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+#bookingForm button {
+    width: 100%;
+    padding: 12px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}

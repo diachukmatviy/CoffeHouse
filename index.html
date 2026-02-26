@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoffeeHouse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+  <div class="header-bg"></div> 
+  
+  <div class="navbar">
+    <img src="images/cup-of-drink-svgrepo-com.svg" class="lgo"><h1>CoffeeHouse</h1>
+    <nav>
+      <a href="#about">Про нас</a>
+      <a href="#menu">Меню</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#contacts">Контакти</a>
+    </nav>
+  </div>
+
+  <section class="hero">
+  <div class="hero-content">
+    <h1>Ласкаво просимо до CoffeeHouse</h1>
+    <p>Насолоджуйтесь найкращою кавою та смачною їжею в затишній атмосфері.</p>
+    <div class="hero-buttons">
+      <a href="#menu" class="btn-primary">Переглянути меню</a>
+      <button id="openModal" class="btn-reserve">Забронювати столик</button>
+
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Бронювання столика</h2>
+        <form id="bookingForm">
+            <input type="text" placeholder="Ваше ім'я" required>
+            <input type="tel" placeholder="Номер телефону" required>
+            <input type="datetime-local" required>
+            <button type="submit">Підтвердити бронювання</button>
+        </form>
+    </div>
+</div>
+</div>
+    </div>
+  </div>
+</section>
+</header>
+<h1 class="ab1" id="about">Про нас</h1>
+    <div class="about">
+        <p><strong>CoffeeHouse</strong> — це простір добірної кави та справжнього затишку в центрі міста.
+            Ми поєднуємо майстерність бариста зі свіжістю домашньої випічки для вашого ідеального настрою. 
+            Завітайте до нас за своєю порцією натхнення у кожній чашці!</p>
+            <img src="images/gc-libraries-creative-tech-lab-wiOEVPVRfW4-unsplash.jpg" class="abph">
+    </div>
+    <h1 class="mn1">Меню</h1>
+     <div class="slider" id="menu">
+         <div class="slide-track">
+
+    <div class="card">
+  <img src="images/pexels-rahimegul-27026385.jpg" alt="Еспресо">
+  <div class="card-text"><strong>Espresso</strong><br>40 грн</div>
+</div>
+ <div class="card">
+  <img src="images/pexels-michaela-friebelova-417944497-15071996.jpg" alt="Еспресо">
+  <div class="card-text"><strong>Latte</strong><br>50 грн</div>
+</div>    
+<div class="card">
+  <img src="images/pexels-olenkabohovyk-28052354.jpg" alt="Еспресо">
+  <div class="card-text"><strong>Cappuccino</strong><br>35 грн</div>
+</div>    
+    <div class="card">
+  <img src="images/pexels-ahmetyuksek-29799613.jpg" alt="Еспресо">
+  <div class="card-text"><strong>Mocha</strong><br>45 грн</div>
+</div>    
+    <div class="card">
+  <img src="images/pexels-olenkabohovyk-25686145.jpg" alt="Еспресо">
+  <div class="card-text"><strong>Flat White</strong><br>50 грн</div>
+</div>    
+ <div class="card">
+  <img src="images/nathan-dumlao-tA90pRfL2gM-unsplash.jpg" alt="Еспресо">
+  <div class="card-text"><strong>Americano</strong><br>35 грн</div>
+</div>
+
+    <div class="card">
+  <img src="images/pexels-rahimegul-27026385.jpg" alt="Еспресо">
+  <div class="card-text"><strong>Espresso</strong><br>40 грн</div>
+</div>
+ <div class="card">
+  <img src="images/pexels-michaela-friebelova-417944497-15071996.jpg" alt="Еспресо">
+  <div class="card-text"><strong>Latte</strong><br>50 грн</div>
+</div>    
+<div class="card">
+  <img src="images/pexels-olenkabohovyk-28052354.jpg" alt="Еспресо">
+  <div class="card-text"><strong>Cappuccino</strong><br>35 грн</div>
+</div>    
+    <div class="card">
+  <img src="images/pexels-ahmetyuksek-29799613.jpg" alt="Еспресо">
+  <div class="card-text"><strong>Mocha</strong><br>45 грн</div>
+</div>    
+    <div class="card">
+  <img src="images/pexels-olenkabohovyk-25686145.jpg" alt="Еспресо">
+  <div class="card-text"><strong>Flat White</strong><br>50 грн</div>
+</div>    
+ <div class="card">
+  <img src="images/nathan-dumlao-tA90pRfL2gM-unsplash.jpg" alt="Еспресо">
+  <div class="card-text"><strong>Americano</strong><br>35 грн</div>
+</div>
+
+    </div>
+    </div>
+        <div class="blr"></div>
+        <div class="blr2"></div>
+
+    <section id="contacts">
+        <h2>Контакти</h2>
+        <p>Адреса: вул. Центральна, 1, Київ</p>
+        <p>Телефон: +38 099 111 22 33</p>
+        <p>Години роботи: 9:00 - 21:00</p>
+        <div id="formMessage" class="form-message"></div>
+    </section>
+    
+    
+    <footer>
+        <p>&copy; 2026 Кафе "Смачно". Всі права захищено.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
