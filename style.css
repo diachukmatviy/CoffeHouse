@@ -1,20 +1,48 @@
 html{
   overflow-x: hidden;
   scroll-behavior: smooth;
+  max-width: 1920px;
+  width: 100%;
 }
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: var(--bg-color);
 }
-section, .about, #menu, #gallery, #contacts {
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal:nth-child(1) { transition-delay: 0.1s; }
+.reveal:nth-child(2) { transition-delay: 0.2s; }
+.reveal:nth-child(3) { transition-delay: 0.3s; }
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --card-color: #f5f5f5;
+}
+.dark {
+  --bg-color: #111111;
+  --text-color: #ffffff;
+  --card-color: #1e1e1e;
+}
+section, .about, #contacts {
     scroll-margin-top: 350px; 
 }
+
 header {
     position: relative;
     height: 700px;
     text-align: center;
-    color: #000;
+    color: var(--text-color);
     width: 100%;
     top: 0;
     left: 0;
@@ -25,24 +53,69 @@ header {
     backdrop-filter: blur(8px);
 }
 .blr{
-  background-color: rgba(255, 255, 255, 1);
+  background-color:var(--bg-color);
   position :absolute;
   top: 1050px;
-  left: -10px;
+  left: -16px;
   filter: blur(10px);
   width: 200px;
   height: 400px;
   z-index: 2;
 }
 .blr2{
- background-color: rgba(255, 255, 255, 1);
+ background-color: var(--bg-color);
   position :absolute;
   top: 1050px;
-  right: -10px;
+  right: -13px;
   filter: blur(10px);
   width: 200px;
   height: 400px;
   z-index: 2;
+}
+.theme-switch {
+    position: fixed;
+    width: 60px;
+    height: 30px;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #000000;
+
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.theme-slider::before {
+  content: "";
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  left: 3px;
+  bottom: 3px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .theme-slider {
+  background: #ffffff;
+}
+
+input:checked + .theme-slider::before {
+  transform: translateX(30px);
+    background: #000000;
+
 }
 .slider {
   overflow: hidden;
@@ -65,7 +138,7 @@ header {
   height: 300px;  
   overflow: hidden;       
   border-radius: 10px;
-  background-color: #ffffff; 
+  background-color:var(--card-color); 
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s, filter 0.3s;
@@ -81,6 +154,7 @@ header {
 }
 
 .card-text {
+  color :var(--text-color);
   width: 100px;
   padding: 10px;
   margin-top: 23px;
@@ -131,16 +205,19 @@ header {
 .header-bg {
   position: absolute;
   top: 0; left: 0;
-  width: 100%; height: 100%;
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
   background: url("images/nafinia-putra-Kwdp-0pok-I-unsplash.jpg") no-repeat center center;
   background-size: cover;
   filter: blur(4px) brightness(0.6);
   z-index: -1;
 }
 
-.navbar {
-     background-color: rgba(255, 255, 255, 0.3); 
-    backdrop-filter: blur(5px); 
+.navbar {   
+  background-color: var(--bg-color); 
+  backdrop-filter: blur(5px); 
+  align-items: center;
   position: absolute;
   top: 0;
   width: 100%;
@@ -148,21 +225,21 @@ header {
 }
 
 .navbar h1 {
-  position: relative;
-  right: 25%;
-  top: -5px;
-  color: white;
+  margin-top: 19px;
+  margin-right: 950px;
+  color: var(--text-color);
 }
 
 nav a {
-  color: #000;
   position: relative;
-  top: -55px;
+  top: -50px;
   left: 10%;
   padding: 20px;
   margin: 0 10px;
+  align-items: center;
   text-decoration: none;
   font-weight: bold;
+  font-size: 20px;
 }
 
 
@@ -206,7 +283,7 @@ nav ul {
 }
 
 nav a {
-  color: white;
+  color: var(--text-color);
   font-weight: 500;
   transition: 0.3s;
 }
@@ -223,10 +300,10 @@ nav a:hover {
 }
 
 .hero-content {
-    position:relative;
-    left: -500px;
-    top: -90%;
-      max-width: 600px;
+  position:absolute; 
+  left: 5%;
+  top: 30%;
+  max-width: 600px;
   align-items: center;
   animation: fadeUp 1s ease forwards;
 }
@@ -294,6 +371,7 @@ nav a:hover {
 
 
 footer {
+  margin-top: 20px;
   background: #111;
   color: white;
   padding: 40px 80px;
@@ -313,8 +391,19 @@ footer {
 }
 
 @media (max-width: 768px) {
+  html{
+    max-width: 768px;
+  width: 100%;
+  }
   header {
-    padding: 15px 30px;
+    padding: 0px 0px;
+  }
+  .navbar h1 {
+    margin-left: 35px;
+  }
+  nav a {
+    padding: 0px;
+    font-size: 17px;
   }
 
   .hero {
@@ -322,10 +411,45 @@ footer {
     text-align: center;
     justify-content: center;
   }
-
+  .hero p {
+    text-align: center;
+    margin-left: 70px;
+  }
+  .hero h1{
+    text-align: center;
+    margin-left: 50px;
+  }
   .hero-buttons {
+    margin-left: 60px;
     flex-direction: column;
   }
+  .ab1{
+    margin-left: -35px;
+  }
+  .about p{
+    margin-left: 20px;
+    font-size: 20px;
+    text-align: center;
+  }
+  .abph{
+    display: none;
+  }
+  .blr , .blr2{
+    width: 100px;
+  }
+  .mn1{
+    margin-left: -25px;
+  }
+  .contact-img{
+    display: none;
+  }
+  .continf{
+  position: relative;
+  left: 140px;  
+   font-size: 120px;
+  }
+ 
+  
 
  
 }
@@ -341,32 +465,37 @@ footer {
 .about p{
   position: relative;
   left: -150px;
+  color: var(--text-color);
 }
 .lgo{
-  filter: brightness(0) invert(1);
+  fill: var(--text-color);
   width: 35px;
   height: 35px;
   position: absolute;
-  left: 335px;
-  top: 13px; 
+  margin-left: -620px;
+  margin-top: 13.3px;
 }
+
 
 .ab1{
   position: relative;
   width: 200px;
   left: 47%;
+  color: var(--text-color);
 }
 .mn1{
   position: relative;
   width: 200px;
   left: 48%;
   margin-bottom: 0;
+  color: var(--text-color);
 }
 .abph{
   position: absolute;
   left: 300px;
   top : -50px;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   border-radius: 30px;
   
 }
@@ -533,4 +662,24 @@ footer {
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
+}
+
+.continf{
+  font-size: 20px;
+}
+.contacts {
+  position: relative;
+  top: 20px;
+  left: -150px;
+  width: 400px;
+  height: 350px;
+}
+.contact-img {
+  position: relative;
+  top: -250px;
+  left: 450px;
+  width: 400px;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 20px;
 }
