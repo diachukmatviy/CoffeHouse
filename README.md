@@ -2,7 +2,7 @@
 A modern, responsive landing page for a coffee shop built with HTML, CSS and JavaScript.
 This project is part of my front-end portfolio and demonstrates the ability to create clean, responsive and user-friendly interfaces.
  Live Preview
-https://diachukmatviy.github.io/CoffeHouse/⁠�
+https://diachukmatviy.github.io/CoffeHouse/⁠
  Overview
 CoffeeHouse is a visually clean and modern landing page designed for small coffee businesses.
 The website focuses on simplicity, accessibility and clear user interaction.
